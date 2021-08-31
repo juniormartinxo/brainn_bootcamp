@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brainn :: Bootcamp</title>
+  </head>
+  <body>
+    <div class="container" data-js="container"></div>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script type="text/babel">
+      /**
+       * createElement()
+       *
+       * 1º argumento: tag HTML
+       * 2º argumento: as propriedades
+       * 3º argumento: é o conteúdo dentro da tag HTML
+       * */
+
+      /*const h1 = React.createElement(
+        'h1',
+        {
+          id: 'title',
+          'data-js': 'titulo-js',
+        },
+        React.createElement('b', null, 'Brain :: Bootcamp ReactJs'),
+        React.createElement('span', null, title),
+        span
+      )*/
+
+      const h1 = (
+        <h1 id='title' data-js='titulo-js'>
+          <span>Bootcamp </span>
+          <b>React</b>
+        </h1>
+      )
+
+      const container = document.querySelector('[data-js="container"]')
+
+      ReactDOM.render(h1, container)
+    </script>
+  </body>
+</html>
