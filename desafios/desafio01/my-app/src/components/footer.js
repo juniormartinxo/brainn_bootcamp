@@ -7,7 +7,10 @@ function Footer() {
       <ContainerFluid>
         <H3>Brainn Academy</H3>
         <p>
-          Todos os direitos reservados <a href='https://brain.com'>Brainn</a>
+          Todos os direitos reservados{' '}
+          <a href='https://brainn.co' target='_blank'>
+            Brainn
+          </a>
         </p>
       </ContainerFluid>
     </footer>

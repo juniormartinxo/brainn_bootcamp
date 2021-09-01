@@ -2,39 +2,10 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-.menu {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-content: flex-start;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-}
-
-.menu li {
-  order: 0;
-  flex: 0 1 auto;
-  align-self: auto;
-  margin-right: 1px;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #ff3366;
-  padding: 15px;
-}
-
-.menu li a:hover {
-  background-color: #bd294e;
-}
-
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10vh 10vh 70vh 10vh;
+  grid-template-rows: 100px 36px auto 100px;
   grid-auto-flow: row;
   grid-template-areas:
     'header'
@@ -48,10 +19,12 @@ body {
 
 .header {
   grid-area: header;
+  background-color: #fcfafa;
 }
 
 .navigation {
   grid-area: navigation;
+  background-color: #ff3366;
 }
 
 .main {
@@ -68,10 +41,12 @@ body {
 
 .sidebar {
   grid-area: sidebar;
+  padding: 15px 0px;
 }
 
 .content {
   grid-area: content;
+  padding: 15px 0px;
 }
 
 .footer {
@@ -95,4 +70,63 @@ body {
 .container-fluid {
   margin: 0 auto;
   width: 90%;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0px;
+}
+
+.menu li {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  margin-right: 1px;
+}
+
+.menu li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  /*background-color: #ff3366;*/
+  padding: 10px 15px;
+}
+
+.menu li a:hover {
+  /*background-color: #ff3366;*/
+  color: #000;
+}
+
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  height: 100%;
+}
+
+.header h1 {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  margin-top: 0 !important;
+}
+
+.logo {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  margin-right: 15px;
 }
