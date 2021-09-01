@@ -1,4 +1,4 @@
-import ContainerFluid from './containerFluid'
+import ContainerFluid from './container-fluid'
 import { H1 } from './title'
 import Logo from './logo'
 

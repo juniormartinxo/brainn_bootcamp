@@ -1,4 +1,4 @@
-import ContainerFluid from './containerFluid'
+import ContainerFluid from './container-fluid'
 
 function MenuItem({ text, link }) {
   return (
