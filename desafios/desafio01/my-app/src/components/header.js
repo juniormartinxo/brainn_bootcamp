@@ -1,10 +1,11 @@
 import ContainerFluid from './containerFluid'
+import { H1 } from './title'
 
 function Header() {
   return (
     <header className='header'>
       <ContainerFluid>
-        <h1>Meu primeiro site em React</h1>
+        <H1>Meu primeiro site em React</H1>
       </ContainerFluid>
     </header>
   )

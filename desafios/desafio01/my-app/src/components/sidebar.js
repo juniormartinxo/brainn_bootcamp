@@ -1,7 +1,9 @@
+import { H2 } from './title'
+
 function Sidebar() {
   return (
     <aside className='sidebar'>
-      <h2>Sidebar</h2>
+      <H2>Sidebar</H2>
       <p>Nós estamos na lateral do site</p>
     </aside>
   )
