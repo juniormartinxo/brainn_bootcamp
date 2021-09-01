@@ -96,15 +96,3 @@ body {
   margin: 0 auto;
   width: 90%;
 }
-
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-top: 15px;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding-bottom: 10px;
-}
