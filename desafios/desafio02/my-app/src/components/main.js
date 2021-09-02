@@ -1,12 +1,11 @@
 import Sidebar from './sidebar'
 import Content from './content'
 
-function Main({ contents }) {
-  console.log(contents[0].id)
+function Main({ articles }) {
   return (
     <main className='main'>
-      <Sidebar contents={contents} />
-      <Content title={contents[0].title} text={contents[0].content} />
+      <Sidebar articles={articles} />
+      <Content title={articles[0].title} text={articles[0].content} />
     </main>
   )
 }

@@ -2,8 +2,12 @@ const H1 = ({ children }) => {
   return <h1>{children}</h1>
 }
 
-const H2 = ({ children }) => {
-  return <h2>{children}</h2>
+const H2 = ({ children, dataJs }) => {
+  return (
+    <h2 className='article' data-js={dataJs}>
+      {children}
+    </h2>
+  )
 }
 
 const H3 = ({ children }) => {

@@ -133,6 +133,11 @@ body {
 
 .content-sidebar {
   padding-bottom: 10px;
-  border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
+}
+
+.content-sidebar p {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
 }

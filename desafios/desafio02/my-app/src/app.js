@@ -4,7 +4,7 @@ import Main from './components/main'
 import Footer from './components/footer'
 
 function App() {
-  const contentsSidebar = [
+  const articles = [
     {
       id: 1,
       title: 'Map() explicado de uma forma que você nunca viu antes!',
@@ -16,12 +16,18 @@ function App() {
       content:
         'O restructuring pode ser a alternativa perfeita para um código limpo e totalmente limpo.',
     },
+    {
+      id: 3,
+      title: '5 técnicas de otimização de desempenho do React',
+      content:
+        'Quando criamos um componente renderizado, o React cria um DOM virtual para sua árvore de elementos no componente. Agora, sempre que o estado do componente muda, o React recria a árvore virtual do DOM e compara o resultado com a renderização anterior. Em seguida, atualiza apenas o elemento alterado no DOM real. Este processo é chamado de diffing. O React usa o conceito de um DOM virtual para minimizar o custo de desempenho de renderizar novamente uma página da Web porque o DOM real é caro de manipular.',
+    },
   ]
   return (
     <div className='container'>
       <Header />
       <Menu />
-      <Main contents={contentsSidebar} />
+      <Main articles={articles} />
       <Footer />
     </div>
   )
