@@ -1,10 +1,10 @@
 import Sidebar from './sidebar'
 import Content from './content'
 
-function Main() {
+function Main({ contents }) {
   return (
     <main className='main'>
-      <Sidebar />
+      <Sidebar contents={contents} />
       <Content />
     </main>
   )

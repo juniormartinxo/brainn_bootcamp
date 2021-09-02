@@ -29,9 +29,9 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
+  grid-template-columns: 0.5fr 1fr;
   grid-template-rows: 1fr;
-  gap: 0px 5px;
+  gap: 0px 25px;
   grid-auto-flow: row;
   grid-template-areas: 'sidebar content';
   grid-area: main;
@@ -129,4 +129,10 @@ body {
   align-self: auto;
   order: 0;
   margin-right: 15px;
+}
+
+.content-sidebar {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
 }

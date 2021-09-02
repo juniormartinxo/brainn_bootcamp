@@ -1,14 +1,23 @@
-import { H2 } from './title'
+import { H2, H6 } from './title'
 import Button from './button'
 
-function Sidebar() {
+function articles({ id, title, content }) {
+  return (
+    <div className='content-sidebar' key={id}>
+      <H6>{title}</H6>
+      {/*<p>{content}</p>*/}
+    </div>
+  )
+}
+
+function Sidebar({ contents }) {
   return (
     <aside className='sidebar'>
-      <H2>Sidebar</H2>
-      <p>Nós estamos na lateral do site</p>
+      <H2>Artigos</H2>
+      {contents.map(item => articles(item))}
 
       <p>
-        <Button kind='primary'>Este é um botão primário</Button>
+        <Button kind='primary'>Ver todos artigos</Button>
       </p>
     </aside>
   )

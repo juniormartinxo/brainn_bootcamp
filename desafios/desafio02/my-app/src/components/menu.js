@@ -1,21 +1,29 @@
-import ContainerFluid from './containerFluid'
+import ContainerFluid from './container-fluid'
 
-function MenuItem({ text, link }) {
+function MenuItem({ id, text, link }) {
   return (
     <li>
-      <a href={link}>{text}</a>
+      <a href={link} key={id}>
+        {text}
+      </a>
     </li>
   )
 }
 
 function Menu() {
+  const menuItems = [
+    { id: 1, text: 'Home', link: '/' },
+    { id: 2, text: 'Sobre', link: '/sobre' },
+    { id: 3, text: 'Contato', link: '/contato' },
+  ]
+
   return (
     <nav className='navigation'>
       <ContainerFluid>
         <ul className='menu'>
-          <MenuItem text='Home' link='/' />
-          <MenuItem text='Sobre' link='/' />
-          <MenuItem text='Contato' link='/' />
+          {menuItems.map(item => (
+            <MenuItem key={item.id} text={item.text} link={item.link} />
+          ))}
         </ul>
       </ContainerFluid>
     </nav>

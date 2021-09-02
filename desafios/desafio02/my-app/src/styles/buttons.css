@@ -1,3 +1,6 @@
+button {
+  font-size: 0.85rem;
+}
 button.primary {
   border-radius: 4px;
   color: #ffffff;
@@ -9,7 +12,6 @@ button.primary {
   cursor: pointer;
   text-align: center;
   border: solid #000000 0;
-  font-size: 1rem;
 }
 
 button.primary:hover {
@@ -30,7 +32,6 @@ button.secondary {
   cursor: pointer;
   text-align: center;
   border: solid #ff3366 0;
-  font-size: 1rem;
 }
 
 button.secondary:hover {
