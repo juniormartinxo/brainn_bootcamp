@@ -53,6 +53,7 @@ body {
   grid-area: footer;
   color: #fff;
   background-color: #000000;
+  text-align: right;
 }
 
 .footer a {
@@ -132,12 +133,32 @@ body {
 }
 
 .content-sidebar {
-  padding-bottom: 10px;
+  width: 85%;
+  padding: 10px;
   margin-bottom: 10px;
+  cursor: pointer;
+  border: 2px dashed #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.content-sidebar:hover,
+.checked {
+  background-color: #e9e9e9;
+  /*color: #fff;*/
+  border: 2px dashed #000;
 }
 
 .content-sidebar p {
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #ccc;
+}
+
+.container-button-all-articles {
+  margin-top: 25px;
+}
+
+.container-button-all-articles button {
+  width: 92%;
 }

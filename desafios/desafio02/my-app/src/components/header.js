@@ -1,5 +1,5 @@
 import ContainerFluid from './container-fluid'
-import { H1 } from './title'
+import { H1 } from './headings'
 import Logo from './logo'
 
 function Header() {

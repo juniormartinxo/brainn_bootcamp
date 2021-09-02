@@ -1,5 +1,5 @@
 import ContainerFluid from './container-fluid'
-import { H3 } from './title'
+import { H3 } from './headings'
 
 function Footer() {
   return (
