@@ -1,14 +1,12 @@
 import Button from './button'
 import { H2 } from './title'
 
-function Content() {
+function Content({ title, text }) {
+  console.log(title)
   return (
     <section className='content'>
-      <H2>Conteúdo</H2>
-      <p>Nós estamos no conteúdo do site</p>
-      <p>
-        <Button kind='secondary'>Este é um botão secundário</Button>
-      </p>
+      <H2>{title === undefined ? 'Conteúdo' : title}</H2>
+      <p>{text === undefined ? 'Selecione um artigo' : text}</p>
     </section>
   )
 }

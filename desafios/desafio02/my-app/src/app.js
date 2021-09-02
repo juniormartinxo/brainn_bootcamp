@@ -8,8 +8,7 @@ function App() {
     {
       id: 1,
       title: 'Map() explicado de uma forma que você nunca viu antes!',
-      content:
-        'Aprenda de forma definitiva como utilizar o map() no javascript.',
+      content: `Aprenda de forma definitiva como utilizar o map() no javascript. O método map() invoca a função callback passada por argumento para cada elemento do Array e devolve um novo Array como resultado.`,
     },
     {
       id: 2,
