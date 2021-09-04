@@ -1,20 +1,32 @@
-import { useEffect } from 'react'
-
-const url = 'https://ws.apicep.com/cep.json?code=[CEP]'
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [counter, setCounter] = useState(0)
+
+  return (
+    <>
+      <Counter counter={counter} />
+      <button onClick={() => setCounter(c => c - 1)}>diminuir -</button>
+      <button onClick={() => setCounter(c => c + 1)}>+ aumentar</button>
+    </>
+  )
+}
+
+function Counter({ counter }) {
+  console.log('counter')
+
   useEffect(() => {
-    async function getCep() {
-      const response = await fetch(url.replace('[CEP]', '06233-030'))
-      const data = await response.json()
-      console.log(data)
+    console.log('useEffect de counter')
+
+    // clean
+    return () => {
+      console.log('clean effect de counter')
     }
-    getCep()
   })
 
   return (
     <>
-      <button>Buscar CEP</button>
+      <h1>{counter}</h1>
     </>
   )
 }
