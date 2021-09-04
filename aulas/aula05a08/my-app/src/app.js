@@ -1,26 +1,17 @@
 import { useState } from 'react'
 
 function App() {
-  const [inputValue, setInputValue] = useState('')
+  const [counter, setCounter] = useState(0)
 
-  const handleChange = e => {
-    console.log('inputValue: ', e.target.value)
-
-    if (!Number.isNaN(Number(e.target.value))) {
-      setInputValue(e.target.value)
-    }
+  function handleCounter() {
+    setCounter(prevState => prevState + 1)
   }
 
   return (
-    <form action=''>
-      <input
-        type='text'
-        name='input'
-        value={inputValue}
-        onChange={handleChange}
-      />
-      <button type='submit'>Enviar</button>
-    </form>
+    <>
+      <h1>{counter}</h1>
+      <button onClick={handleCounter}>Atualizar contador</button>
+    </>
   )
 }
 
