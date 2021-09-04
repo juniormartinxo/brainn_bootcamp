@@ -1,26 +1,32 @@
 import { useState } from 'react'
 
 function App() {
-  const [inputValue, setInputValue] = useState('')
-
-  const handleChange = e => {
-    console.log('inputValue: ', e.target.value)
-
-    if (!Number.isNaN(Number(e.target.value))) {
-      setInputValue(e.target.value)
-    }
-  }
+  const [counter, setCounter] = useState(0)
 
   return (
-    <form action=''>
-      <input
-        type='text'
-        name='input'
-        value={inputValue}
-        onChange={handleChange}
-      />
-      <button type='submit'>Enviar</button>
-    </form>
+    <>
+      <Title>{counter}</Title>
+      <Buttons setCounter={setCounter} />
+    </>
+  )
+}
+
+function Title({ children }) {
+  return <h1>{children}</h1>
+}
+
+function Buttons({ setCounter }) {
+  function increment() {
+    setCounter(prevState => prevState + 1)
+  }
+  function decrement() {
+    setCounter(prevState => prevState - 1)
+  }
+  return (
+    <>
+      <button onClick={decrement}>-</button>
+      <button onClick={increment}>+</button>
+    </>
   )
 }
 
