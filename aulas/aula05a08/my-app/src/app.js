@@ -1,32 +1,27 @@
-import { useState } from 'react'
+const url = 'https://ws.apicep.com/cep.json?code=[CEP]'
 
 function App() {
-  const [counter, setCounter] = useState(0)
+  function handleClick() {
+    fetch(url.replace('[CEP]', document.getElementById('cep').value))
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        document.getElementById('result').innerHTML = `
+                    <p>${data.address}</p>
+                    <p>${data.district}</p>
+                    <p>${data.city}</p>
+                    <p>${data.state}</p>
+                `
+      })
+  }
 
   return (
-    <>
-      <Title>{counter}</Title>
-      <Buttons setCounter={setCounter} />
-    </>
-  )
-}
-
-function Title({ children }) {
-  return <h1>{children}</h1>
-}
-
-function Buttons({ setCounter }) {
-  function increment() {
-    setCounter(prevState => prevState + 1)
-  }
-  function decrement() {
-    setCounter(prevState => prevState - 1)
-  }
-  return (
-    <>
-      <button onClick={decrement}>-</button>
-      <button onClick={increment}>+</button>
-    </>
+    <div>
+      <h1>CEP</h1>
+      <input type='text' id='cep' />
+      <button onClick={handleClick}>Buscar</button>
+      <div id='result'></div>
+    </div>
   )
 }
 
