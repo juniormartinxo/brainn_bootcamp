@@ -8,7 +8,7 @@ function Footer() {
         <H3>Brainn Academy</H3>
         <p>
           Todos os direitos reservados{' '}
-          <a href='https://brainn.co' target='_blank'>
+          <a href='https://brainn.co' target='_blank' rel='noreferrer'>
             Brainn
           </a>
         </p>
