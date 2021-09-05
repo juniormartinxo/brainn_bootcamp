@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import Table from './components/table'
+import './App.css'
+
+const urlCars = 'http://localhost:3333/cars'
 
 function App() {
+  const [cars, setCars] = useState([])
+
+  useEffect(() => {
+    function listCars() {
+      if (cars === null) {
+        return
+      }
+
+      fetch(urlCars)
+        .then(response => response.json())
+        .then(data => {
+          console.log('resultado: ', data)
+          setCars(data)
+        })
+    }
+
+    listCars()
+
+    return () => {
+      console.log('cleanup')
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Table setCars={setCars} cars={cars}></Table>
+    </>
+  )
 }
 
-export default App;
+export default App
