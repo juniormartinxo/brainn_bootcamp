@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import Table from './components/table'
-import './App.css'
 
 const urlCars = 'http://localhost:3333/cars'
 
