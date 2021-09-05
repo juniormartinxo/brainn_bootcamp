@@ -1,31 +1,39 @@
 function Table({ cars, setCars }) {
+  function getColor(color) {
+    return 'background-color: ' + color
+  }
   return (
     <table>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Image</th>
-          <th>Brand</th>
-          <th>Model</th>
-          <th>Year</th>
-          <th>Plate</th>
-          <th>Color</th>
-          <th></th>
+          <th className='center'>ID</th>
+          <th className='center'>Image</th>
+          <th className='center'>Brand</th>
+          <th className='center'>Model</th>
+          <th className='center'>Year</th>
+          <th className='center'>Plate</th>
+          <th className='center'>Color</th>
+          <th className='center'></th>
         </tr>
       </thead>
       <tbody>
         {cars.map(car => (
           <tr key={car.id} className='rowCar'>
-            <td>{car.id}</td>
-            <td>
+            <td className='center'>{car.id}</td>
+            <td className='center'>
               <img src={car.image} alt={car.brand} className='img-car' />
             </td>
-            <td>{car.brand}</td>
-            <td>{car.model}</td>
-            <td>{car.year}</td>
-            <td>{car.plate}</td>
-            <td>{car.color}</td>
-            <td>
+            <td className='center'>{car.brand}</td>
+            <td className='center'>{car.model}</td>
+            <td className='center'>{car.year}</td>
+            <td className='center'>{car.plate}</td>
+            <td className='center'>
+              <span
+                style={{ backgroundColor: car.color }}
+                className='box-color'
+              ></span>
+            </td>
+            <td className='center'>
               <button
                 className='btnDeleteCar btn btn-x deeppink'
                 data-id={car.id}

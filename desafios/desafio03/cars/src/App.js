@@ -29,9 +29,9 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div className='container'>
       <Table setCars={setCars} cars={cars}></Table>
-    </>
+    </div>
   )
 }
 
