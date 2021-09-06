@@ -63,8 +63,9 @@
 .btn-large[disabled]:hover,
 .btn-small[disabled]:hover,
 .btn-flat[disabled]:hover {
-  background-color: #dfdfdf !important;
+  /*background-color: #dfdfdf !important;*/
   color: #9f9f9f !important;
+  background-color: #fc1f56 !important;
 }
 
 .btn,
