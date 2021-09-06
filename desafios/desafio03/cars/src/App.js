@@ -1,35 +1,27 @@
 import { useEffect, useState } from 'react'
 import Table from './components/table'
-
-const urlCars = 'http://localhost:3333/cars'
+import Form from './components/form'
+//import { ListCars } from './services/Cars'
 
 function App() {
   const [cars, setCars] = useState([])
 
   useEffect(() => {
-    function listCars() {
-      if (cars === null) {
-        return
-      }
+    function getListCars() {
+      const urlCars = 'http://localhost:3333/cars'
 
       fetch(urlCars)
         .then(response => response.json())
-        .then(data => {
-          console.log('resultado: ', data)
-          setCars(data)
-        })
+        .then(data => setCars(data))
     }
 
-    listCars()
-
-    return () => {
-      console.log('cleanup')
-    }
+    getListCars()
   }, [])
 
   return (
     <div className='container'>
-      <Table setCars={setCars} cars={cars}></Table>
+      <Form />
+      <Table cars={cars}></Table>
     </div>
   )
 }

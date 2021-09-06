@@ -1,7 +1,4 @@
-function Table({ cars, setCars }) {
-  function getColor(color) {
-    return 'background-color: ' + color
-  }
+function Table({ cars }) {
   return (
     <table>
       <thead>
@@ -37,9 +34,7 @@ function Table({ cars, setCars }) {
               <button
                 className='btnDeleteCar btn btn-x deeppink'
                 data-id={car.id}
-                oncClick={() => {
-                  console.log('delete')
-                }}
+                onClick={() => null}
               >
                 <i className='far fa-trash-alt far-sm' data-id={car.id}></i>
               </button>
