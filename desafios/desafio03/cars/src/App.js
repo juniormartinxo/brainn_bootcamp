@@ -19,11 +19,11 @@ function App() {
     }
 
     getListCars()
-  }, [])
+  }, [setCars])
 
   return (
     <div className='container'>
-      <Form />
+      <Form setCars={setCars} cars={cars} />
       <Table cars={cars} setCars={setCars}></Table>
     </div>
   )

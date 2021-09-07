@@ -49,17 +49,13 @@ function RowCar({ car, setCars, cars }) {
             const newCars = cars.filter(carNew => carNew.id !== car.id)
 
             try {
-              const response = await fetch(urlCars, {
+              await fetch(urlCars, {
                 method: 'DELETE',
                 headers: {
                   'content-type': 'application/json',
                 },
                 body: JSON.stringify({ id: car.id }),
               })
-              const json = await response.json()
-              console.log('reponse', json)
-
-              //setCars(json)
             } catch (error) {
               console.log('error', error)
             }
