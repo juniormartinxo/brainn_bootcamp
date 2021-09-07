@@ -1,14 +1,6 @@
-//import { useEffect, useState } from 'react'
-import { urlDeleteCars } from '../config/env'
+import { urlCars } from '../config/env'
 
-function Table({ cars, setCars, urlCars }) {
-  /*
-  function handleRemoveCar(id) {
-    const newCars = cars.filter(car => car.id !== id)
-    setCars(newCars)
-  }
-  */
-
+function Table({ cars, setCars }) {
   return (
     <table>
       <thead>
@@ -32,14 +24,7 @@ function Table({ cars, setCars, urlCars }) {
   )
 }
 
-function RowCar({ car, setCars, cars, urlCars }) {
-  /*
-  function handleRemoveCar(id) {
-    const newCars = cars.filter(car => car.id !== id)
-    setCars(newCars)
-  }
-  */
-
+function RowCar({ car, setCars, cars }) {
   return (
     <tr key={car.id} className='rowCar'>
       <td className='center'>{car.id}</td>
@@ -64,13 +49,17 @@ function RowCar({ car, setCars, cars, urlCars }) {
             const newCars = cars.filter(carNew => carNew.id !== car.id)
 
             try {
-              const response = await fetch(urlDeleteCars, {
+              const response = await fetch(urlCars, {
                 method: 'DELETE',
-                body: JSON.stringify(car.id),
+                headers: {
+                  'content-type': 'application/json',
+                },
+                body: JSON.stringify({ id: car.id }),
               })
               const json = await response.json()
+              console.log('reponse', json)
 
-              setCars(json)
+              //setCars(json)
             } catch (error) {
               console.log('error', error)
             }

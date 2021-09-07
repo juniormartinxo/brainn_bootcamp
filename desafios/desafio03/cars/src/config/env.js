@@ -1,6 +1,5 @@
 const ENV = process.env
 
-const urlListCars = `${ENV.REACT_APP_URL_API_CARS}/cars`
-const urlDeleteCars = `${ENV.REACT_APP_URL_API_CARS}/`
+const urlCars = `${ENV.REACT_APP_URL_API_CARS}/cars`
 
-export { ENV, urlListCars, urlDeleteCars }
+export { ENV, urlCars }
