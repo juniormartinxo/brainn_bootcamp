@@ -1,4 +1,13 @@
-function Table({ cars }) {
+//import { useEffect, useState } from 'react'
+
+function Table({ cars, setCars }) {
+  /*
+  function handleRemoveCar(id) {
+    const newCars = cars.filter(car => car.id !== id)
+    setCars(newCars)
+  }
+  */
+
   return (
     <table>
       <thead>
@@ -15,34 +24,50 @@ function Table({ cars }) {
       </thead>
       <tbody>
         {cars.map(car => (
-          <tr key={car.id} className='rowCar'>
-            <td className='center'>{car.id}</td>
-            <td className='center'>
-              <img src={car.image} alt={car.brand} className='img-car' />
-            </td>
-            <td className='center'>{car.brand}</td>
-            <td className='center'>{car.model}</td>
-            <td className='center'>{car.year}</td>
-            <td className='center'>{car.plate}</td>
-            <td className='center'>
-              <span
-                style={{ backgroundColor: car.color }}
-                className='box-color'
-              ></span>
-            </td>
-            <td className='center'>
-              <button
-                className='btnDeleteCar btn btn-x deeppink'
-                data-id={car.id}
-                onClick={() => null}
-              >
-                <i className='far fa-trash-alt far-sm' data-id={car.id}></i>
-              </button>
-            </td>
-          </tr>
+          <RowCar key={car.id} car={car} setCars={setCars} cars={cars} />
         ))}
       </tbody>
     </table>
+  )
+}
+
+function RowCar({ car, setCars, cars }) {
+  /*
+  function handleRemoveCar(id) {
+    const newCars = cars.filter(car => car.id !== id)
+    setCars(newCars)
+  }
+  */
+
+  return (
+    <tr key={car.id} className='rowCar'>
+      <td className='center'>{car.id}</td>
+      <td className='center'>
+        <img src={car.image} alt={car.brand} className='img-car' />
+      </td>
+      <td className='center'>{car.brand}</td>
+      <td className='center'>{car.model}</td>
+      <td className='center'>{car.year}</td>
+      <td className='center'>{car.plate}</td>
+      <td className='center'>
+        <span
+          style={{ backgroundColor: car.color }}
+          className='box-color'
+        ></span>
+      </td>
+      <td className='center'>
+        <button
+          className='btnDeleteCar btn btn-x deeppink'
+          data-id={car.id}
+          onClick={() => {
+            const newCars = cars.filter(carNew => carNew.id !== car.id)
+            setCars(newCars)
+          }}
+        >
+          <i className='far fa-trash-alt far-sm' data-id={car.id}></i>
+        </button>
+      </td>
+    </tr>
   )
 }
 
