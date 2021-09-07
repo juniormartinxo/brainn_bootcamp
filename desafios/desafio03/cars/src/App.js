@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Table from './components/table'
 import Form from './components/form'
-import { urlListCars } from './config/env'
+import { urlCars } from './config/env'
 
 function App() {
   const [cars, setCars] = useState([])
@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const getListCars = async () => {
       try {
-        const response = await fetch(urlListCars)
+        const response = await fetch(urlCars)
         const json = await response.json()
 
         setCars(json)
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className='container'>
       <Form />
-      <Table cars={cars} setCars={setCars} urlCars={urlListCars}></Table>
+      <Table cars={cars} setCars={setCars}></Table>
     </div>
   )
 }
