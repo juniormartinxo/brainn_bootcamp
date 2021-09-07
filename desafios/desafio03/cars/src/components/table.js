@@ -1,6 +1,7 @@
 //import { useEffect, useState } from 'react'
+import { urlDeleteCars } from '../config/env'
 
-function Table({ cars, setCars }) {
+function Table({ cars, setCars, urlCars }) {
   /*
   function handleRemoveCar(id) {
     const newCars = cars.filter(car => car.id !== id)
@@ -31,7 +32,7 @@ function Table({ cars, setCars }) {
   )
 }
 
-function RowCar({ car, setCars, cars }) {
+function RowCar({ car, setCars, cars, urlCars }) {
   /*
   function handleRemoveCar(id) {
     const newCars = cars.filter(car => car.id !== id)
@@ -59,9 +60,22 @@ function RowCar({ car, setCars, cars }) {
         <button
           className='btnDeleteCar btn btn-x deeppink'
           data-id={car.id}
-          onClick={() => {
+          onClick={async () => {
             const newCars = cars.filter(carNew => carNew.id !== car.id)
-            setCars(newCars)
+
+            try {
+              const response = await fetch(urlDeleteCars, {
+                method: 'DELETE',
+                body: JSON.stringify(car.id),
+              })
+              const json = await response.json()
+
+              setCars(json)
+            } catch (error) {
+              console.log('error', error)
+            }
+
+            await setCars(newCars)
           }}
         >
           <i className='far fa-trash-alt far-sm' data-id={car.id}></i>
