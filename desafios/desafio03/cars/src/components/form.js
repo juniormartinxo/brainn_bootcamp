@@ -81,89 +81,96 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
     }).then(res => res.json())
 
     setCars([car, ...cars])
+
+    e.target.reset()
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className='row'>
-        <div className='input-container col s4'>
-          <label htmlFor='iptCarUrlImage'>Url da imagem</label>
-          <input
-            type='text'
-            data-js='iptCarUrlImage'
-            className='iptCarUrlImage deeppink-border'
-            name='iptCarUrlImage'
-            id='iptCarUrlImage'
-          />
+    <>
+      <h1> Cadastro de carros </h1>
+      <form onSubmit={handleSubmit}>
+        <div className='row'>
+          <div className='input-container col s12'>
+            <label htmlFor='iptCarUrlImage'>Url da imagem</label>
+            <input
+              type='text'
+              data-js='iptCarUrlImage'
+              className='iptCarUrlImage deeppink-border'
+              name='iptCarUrlImage'
+              id='iptCarUrlImage'
+            />
+          </div>
         </div>
-        <div className='input-container col s4'>
-          <label htmlFor='iptCarBrand'>Marca</label>
-          <input
-            type='text'
-            data-js='iptCarBrand'
-            className='iptCarBrand deeppink-border'
-            name='iptCarBrand'
-            id='iptCarBrand'
-          />
+        <div className='row'>
+          <div className='input-container col s6'>
+            <label htmlFor='iptCarBrand'>Marca</label>
+            <input
+              type='text'
+              data-js='iptCarBrand'
+              className='iptCarBrand deeppink-border'
+              name='iptCarBrand'
+              id='iptCarBrand'
+            />
+          </div>
+          <div className='input-container col s6'>
+            <label htmlFor='iptCarModel'>Modelo</label>
+            <input
+              type='text'
+              data-js='iptCarModel'
+              className='iptCarModel deeppink-border'
+              name='iptCarModel'
+              id='iptCarModel'
+            />
+          </div>
         </div>
-        <div className='input-container col s4'>
-          <label htmlFor='iptCarModel'>Modelo</label>
-          <input
-            type='text'
-            data-js='iptCarModel'
-            className='iptCarModel deeppink-border'
-            name='iptCarModel'
-            id='iptCarModel'
-          />
-        </div>
-      </div>
 
-      <div className='row'>
-        <div className='input-container col s4'>
-          <label htmlFor='iptCarYear'>Ano</label>
-          <input
-            type='number'
-            data-js='iptCarYear'
-            className='iptCarYear deeppink-border'
-            name='iptCarYear'
-            id='iptCarYear'
-          />
+        <div className='row'>
+          <div className='input-container col s4'>
+            <label htmlFor='iptCarYear'>Ano</label>
+            <input
+              type='number'
+              data-js='iptCarYear'
+              className='iptCarYear deeppink-border'
+              name='iptCarYear'
+              id='iptCarYear'
+            />
+          </div>
+          <div className='input-container col s4'>
+            <label htmlFor='iptCarPlate'>Placa</label>
+            <input
+              type='text'
+              data-js='iptCarPlate'
+              className='iptCarPlate deeppink-border'
+              name='iptCarPlate'
+              id='iptCarPlate'
+            />
+          </div>
+          <div className='input-container col s4'>
+            <label htmlFor='iptCarColor'>Color</label>
+            <br />
+            <input
+              type='color'
+              data-js='iptCarColor'
+              className='iptCarColor'
+              name='iptCarColor'
+              id='iptCarColor'
+            />
+          </div>
         </div>
-        <div className='input-container col s4'>
-          <label htmlFor='iptCarPlate'>Placa</label>
-          <input
-            type='text'
-            data-js='iptCarPlate'
-            className='iptCarPlate deeppink-border'
-            name='iptCarPlate'
-            id='iptCarPlate'
-          />
-        </div>
-        <div className='input-container col s4'>
-          <label htmlFor='iptCarColor'>Color</label>
-          <br />
-          <input
-            type='color'
-            data-js='iptCarColor'
-            className='iptCarColor'
-            name='iptCarColor'
-            id='iptCarColor'
-          />
-        </div>
-      </div>
 
-      <div className='input-container'>
-        <button
-          type='submit'
-          className='btn deeppink col'
-          data-js='btnInsertCar'
-          name='btnInsertCar'
-          id='btnInsertCar'
-        >
-          Enviar
-        </button>
-      </div>
-    </form>
+        <div className='input-container'>
+          <button
+            type='submit'
+            className='btn deeppink col'
+            data-js='btnInsertCar'
+            name='btnInsertCar'
+            id='btnInsertCar'
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+    </>
   )
 }
 
