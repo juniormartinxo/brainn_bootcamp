@@ -1,6 +1,6 @@
-function Alert({ children }) {
+function Alert({ children, statusAlert }) {
   return (
-    <div className='alert alert-danger' role='alert'>
+    <div className={'alert ' + statusAlert} role='alert'>
       {children}
     </div>
   )
