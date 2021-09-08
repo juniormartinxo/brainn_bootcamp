@@ -6,7 +6,8 @@ import Alert from './components/alert'
 
 function App() {
   const [cars, setCars] = useState([])
-  const [statusAlert, setStatusAlert] = useState('hidden')
+  const [alertStatus, setAlertStatus] = useState('hidden')
+  const [alertMessage, setAlertMessage] = useState('')
 
   useEffect(() => {
     const getListCars = async () => {
@@ -25,11 +26,14 @@ function App() {
 
   return (
     <div className='container'>
-      <Form setCars={setCars} cars={cars} setStatusAlert={setStatusAlert} />
+      <Form
+        setCars={setCars}
+        cars={cars}
+        setAlertStatus={setAlertStatus}
+        setAlertMessage={setAlertMessage}
+      />
       <Table cars={cars} setCars={setCars}></Table>
-      <Alert statusAlert={statusAlert}>
-        <p>Este é um alert</p>
-      </Alert>
+      <Alert alertStatus={alertStatus}>{alertMessage}</Alert>
     </div>
   )
 }

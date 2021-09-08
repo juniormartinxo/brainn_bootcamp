@@ -1,6 +1,15 @@
 import { urlCars } from '../config/env'
 
-function Form({ cars, setCars }) {
+function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
+  function sendMessage(message, status, time) {
+    setAlertMessage(message)
+    setAlertStatus(status)
+
+    setTimeout(() => {
+      setAlertStatus('hidden')
+    }, time)
+  }
+
   function handleSubmit(e) {
     e.preventDefault()
 
@@ -23,32 +32,32 @@ function Form({ cars, setCars }) {
     }
 
     if (iptCarUrlImage.length === 0) {
-      alert('Adicione uma imagem')
+      sendMessage('Preencha o campo URL da imagem!', 'visible', 6000)
       return
     }
 
     if (iptCarBrand.length === 0) {
-      alert('Preencha a marca')
+      sendMessage('Preencha o campo marca!', 'visible', 6000)
       return
     }
 
     if (iptCarModel.length === 0) {
-      alert('Preencha o modelo')
+      sendMessage('Preencha o campo modelo!', 'visible', 6000)
       return
     }
 
     if (iptCarYear.length === 0) {
-      alert('Preencha o ano')
+      sendMessage('Preencha o campo ano!', 'visible', 6000)
       return
     }
 
     if (iptCarPlate.length === 0) {
-      alert('Preencha a placa')
+      sendMessage('Preencha o campo placa!', 'visible', 6000)
       return
     }
 
     if (iptCarColor.length === 0) {
-      alert('Preencha a cor')
+      sendMessage('Preencha o campo cor!', 'visible', 6000)
       return
     }
 
@@ -58,11 +67,9 @@ function Form({ cars, setCars }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(car),
-    })
-      .then(res => res.json())
-      .then(data => {
-        setCars([...cars, data])
-      })
+    }).then(res => res.json())
+
+    setCars([car, ...cars])
   }
 
   return (

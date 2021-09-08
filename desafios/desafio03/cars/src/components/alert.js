@@ -1,7 +1,7 @@
-function Alert({ children, statusAlert }) {
+function Alert({ alertStatus, children }) {
   return (
-    <div className={'alert ' + statusAlert} role='alert'>
-      {children}
+    <div className={'alert ' + alertStatus} role='alert'>
+      <p>{children}</p>
     </div>
   )
 }

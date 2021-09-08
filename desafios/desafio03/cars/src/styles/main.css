@@ -85,29 +85,11 @@ textarea.deeppink-border.materialize-textarea:focus:not([readonly]) {
 .visible {
   visibility: visible;
   opacity: 1;
-  transition: opacity 2s linear;
+  transition: opacity 0.5s linear;
 }
 
 .hidden {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;
-}
-
-@keyframes bounce {
-  20%,
-  50%,
-  80%,
-  to {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  70% {
-    transform: translateY(-15px);
-  }
-  90% {
-    transform: translateY(-4px);
-  }
 }
