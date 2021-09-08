@@ -21,6 +21,47 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
     const iptCarPlate = e.target.elements.iptCarPlate.value
     const iptCarColor = e.target.elements.iptCarColor.value
 
+    if (iptCarUrlImage.length === 0) {
+      sendMessage('Preencha o campo URL da imagem!', 'visible', 5000)
+      return
+    }
+
+    if (iptCarBrand.length === 0) {
+      sendMessage('Preencha o campo marca!', 'visible', 5000)
+      return
+    }
+
+    if (iptCarModel.length === 0) {
+      sendMessage('Preencha o campo modelo!', 'visible', 5000)
+      return
+    }
+
+    if (iptCarYear.length === 0) {
+      sendMessage('Preencha o campo ano!', 'visible', 5000)
+      return
+    }
+
+    if (iptCarPlate.length === 0) {
+      sendMessage('Preencha o campo placa!', 'visible', 5000)
+      return
+    }
+
+    if (iptCarColor.length === 0) {
+      sendMessage('Preencha o campo cor!', 'visible', 5000)
+      return
+    }
+
+    const searchCar = cars.filter(car => car.plate === iptCarPlate)
+
+    if (searchCar.length > 0) {
+      sendMessage(
+        `Já existe outro carro com a placa "${iptCarPlate}" cadastrado!`,
+        'visible',
+        5000
+      )
+      return
+    }
+
     const car = {
       id: randomId,
       image: iptCarUrlImage,
@@ -29,36 +70,6 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
       year: iptCarYear,
       plate: iptCarPlate,
       color: iptCarColor,
-    }
-
-    if (iptCarUrlImage.length === 0) {
-      sendMessage('Preencha o campo URL da imagem!', 'visible', 6000)
-      return
-    }
-
-    if (iptCarBrand.length === 0) {
-      sendMessage('Preencha o campo marca!', 'visible', 6000)
-      return
-    }
-
-    if (iptCarModel.length === 0) {
-      sendMessage('Preencha o campo modelo!', 'visible', 6000)
-      return
-    }
-
-    if (iptCarYear.length === 0) {
-      sendMessage('Preencha o campo ano!', 'visible', 6000)
-      return
-    }
-
-    if (iptCarPlate.length === 0) {
-      sendMessage('Preencha o campo placa!', 'visible', 6000)
-      return
-    }
-
-    if (iptCarColor.length === 0) {
-      sendMessage('Preencha o campo cor!', 'visible', 6000)
-      return
     }
 
     fetch(urlCars, {
