@@ -1,10 +1,14 @@
-import { H2, H6 } from '../Headings'
-import { AsideStyle, SidebarContainer } from './styles'
+import {
+  AsideStyle,
+  SidebarContainer,
+  TitleListSideBar,
+  TitleItemListSideBar,
+} from './styles'
 
 function Sidebar({ articles, handleContent, selectedArticle }) {
   return (
     <AsideStyle>
-      <H2>Artigos</H2>
+      <TitleListSideBar>Artigos</TitleListSideBar>
       {articles.map(article => {
         const checked = selectedArticle === article ? 'checked' : ''
         return (
@@ -15,7 +19,7 @@ function Sidebar({ articles, handleContent, selectedArticle }) {
               handleContent(article)
             }}
           >
-            <H6>{article.title}</H6>
+            <TitleItemListSideBar>{article.title}</TitleItemListSideBar>
           </SidebarContainer>
         )
       })}

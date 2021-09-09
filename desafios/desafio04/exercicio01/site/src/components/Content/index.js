@@ -1,11 +1,11 @@
-import { H2 } from '../Headings'
+import { ContentStyle, TitleArticle, ParagraphArticle } from './styles'
 
 function Content({ article }) {
   return (
-    <section className='content'>
-      <H2 dataJs='article-title'>{article.title}</H2>
-      <p data-js='article-text'>{article.content}</p>
-    </section>
+    <ContentStyle>
+      <TitleArticle dataJs='article-title'>{article.title}</TitleArticle>
+      <ParagraphArticle>{article.content}</ParagraphArticle>
+    </ContentStyle>
   )
 }
 

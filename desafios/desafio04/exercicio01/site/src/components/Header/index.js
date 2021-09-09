@@ -1,6 +1,5 @@
 import ContainerFluid from '../ContainerFluid'
-import HeaderContainer from './styles'
-import { H1 } from '../Headings'
+import { HeaderContainer, TitleHeader } from './styles'
 import Logo from '../Logo'
 
 function Header() {
@@ -8,7 +7,7 @@ function Header() {
     <HeaderContainer>
       <ContainerFluid>
         <Logo />
-        <H1>:: Bootcamp de React</H1>
+        <TitleHeader>:: Bootcamp de React</TitleHeader>
       </ContainerFluid>
     </HeaderContainer>
   )

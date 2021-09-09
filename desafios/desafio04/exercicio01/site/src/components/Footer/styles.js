@@ -5,17 +5,22 @@ const FooterContainer = styled.footer`
   color: #fff;
   background-color: #000000;
   text-align: right;
+`
 
-  a {
-    color: #ff3366;
-    &:hover {
-      color: #bd294e;
-    }
-  }
+const TextFooter = styled.p``
 
-  p {
-    margin-top: 15px;
+const TitleFooter = styled.h3`
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 10px 0;
+`
+
+const LinkFooter = styled.a`
+  color: #ff3366;
+
+  &:hover {
+    color: #bd294e;
   }
 `
 
-export default FooterContainer
+export { FooterContainer, TitleFooter, TextFooter, LinkFooter }

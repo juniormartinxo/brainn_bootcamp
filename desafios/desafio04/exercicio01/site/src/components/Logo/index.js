@@ -1,6 +1,8 @@
+import LogoContainer from './styles'
+
 const Logo = () => {
   return (
-    <div className='logo'>
+    <LogoContainer>
       <svg
         width='50'
         height='50'
@@ -13,7 +15,7 @@ const Logo = () => {
           fill='#000'
         ></path>
       </svg>
-    </div>
+    </LogoContainer>
   )
 }
 

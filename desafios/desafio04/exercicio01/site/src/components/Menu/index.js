@@ -1,12 +1,13 @@
 import ContainerFluid from '../ContainerFluid'
+import { NavContainer, MenuList, MenuListItem, MenuListLink } from './styles'
 
 function MenuItem({ id, text, link }) {
   return (
-    <li>
-      <a href={link} key={id}>
+    <MenuListItem>
+      <MenuListLink href={link} key={id}>
         {text}
-      </a>
-    </li>
+      </MenuListLink>
+    </MenuListItem>
   )
 }
 
@@ -18,15 +19,15 @@ function Menu() {
   ]
 
   return (
-    <nav className='navigation'>
+    <NavContainer>
       <ContainerFluid>
-        <ul className='menu'>
+        <MenuList>
           {menuItems.map(item => (
             <MenuItem key={item.id} text={item.text} link={item.link} />
           ))}
-        </ul>
+        </MenuList>
       </ContainerFluid>
-    </nav>
+    </NavContainer>
   )
 }
 

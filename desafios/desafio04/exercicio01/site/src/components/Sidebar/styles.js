@@ -47,4 +47,17 @@ const SidebarContainer = styled.div`
   }
 `
 
-export { AsideStyle, SidebarContainer }
+const TitleListSideBar = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 10px;
+  line-height: normal;
+`
+
+const TitleItemListSideBar = styled.h6`
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 0;
+`
+
+export { AsideStyle, SidebarContainer, TitleListSideBar, TitleItemListSideBar }
