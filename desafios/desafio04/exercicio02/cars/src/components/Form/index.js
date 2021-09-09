@@ -1,4 +1,5 @@
-import { urlCars } from '../config/env'
+import { urlCars } from '../../config/env'
+import { TitleForm } from './styles'
 
 function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
   function sendMessage(message, status, time) {
@@ -87,7 +88,7 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
 
   return (
     <>
-      <h1> Cadastro de carros </h1>
+      <TitleForm>Cadastro de carros</TitleForm>
       <form onSubmit={handleSubmit}>
         <div className='row'>
           <div className='input-container col s12'>

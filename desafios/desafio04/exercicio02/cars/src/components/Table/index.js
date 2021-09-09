@@ -1,4 +1,4 @@
-import { urlCars } from '../config/env'
+import { urlCars } from '../../config/env'
 
 function Table({ cars, setCars }) {
   return (

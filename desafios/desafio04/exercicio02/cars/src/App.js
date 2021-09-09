@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import Table from './components/table'
 import Form from './components/form'
 import { urlCars } from './config/env'
-import Alert from './components/alert'
+import Alert from './components/Alert'
+import GlobalStyle from './styles/global-styles'
 
 function App() {
   const [cars, setCars] = useState([])
