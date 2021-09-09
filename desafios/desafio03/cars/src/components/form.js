@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import { urlCars } from '../config/env'
 
 function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
+  const [iptCarColor, setIptCarColor] = useState('#000000')
+
   function sendMessage(message, status, time) {
     setAlertMessage(message)
     setAlertStatus(status)
@@ -46,11 +49,6 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
       return
     }
 
-    if (iptCarColor.length === 0) {
-      sendMessage('Preencha o campo cor!', 'visible', 5000)
-      return
-    }
-
     const searchCar = cars.filter(car => car.plate === iptCarPlate)
 
     if (searchCar.length > 0) {
@@ -82,7 +80,9 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
 
     setCars([car, ...cars])
 
-    e.target.reset()
+    e.target.reset(() => {
+      setIptCarColor('#000000')
+    })
   }
 
   return (
@@ -154,6 +154,8 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
               className='iptCarColor'
               name='iptCarColor'
               id='iptCarColor'
+              value={iptCarColor}
+              onChange={e => setIptCarColor(e.target.value)}
             />
           </div>
         </div>

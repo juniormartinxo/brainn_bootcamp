@@ -1,18 +1,19 @@
 import { useState } from 'react'
-import Sidebar from './sidebar'
-import Content from './content'
+import MainContainer from './styles'
+import Sidebar from '../Sidebar'
+import Content from '../Content'
 
 function Main({ articles }) {
   const [selectedArticle, setSelectedArticle] = useState(articles[0])
   return (
-    <main className='main'>
+    <MainContainer>
       <Sidebar
         articles={articles}
         handleContent={setSelectedArticle}
         selectedArticle={selectedArticle}
       />
       <Content article={selectedArticle} />
-    </main>
+    </MainContainer>
   )
 }
 

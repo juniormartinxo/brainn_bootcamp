@@ -1,11 +1,12 @@
-import ContainerFluid from './container-fluid'
-import { H3 } from './headings'
+import ContainerFluid from '../ContainerFluid'
+import FooterContainer from './styles'
+import { H3 } from '../Headings'
 
 function Footer() {
   return (
-    <footer className='footer'>
+    <FooterContainer>
       <ContainerFluid>
-        <H3>Brainn Academy</H3>
+        <h3>Brainn Academy</h3>
         <p>
           Todos os direitos reservados{' '}
           <a href='https://brainn.co' target='_blank' rel='noreferrer'>
@@ -13,7 +14,7 @@ function Footer() {
           </a>
         </p>
       </ContainerFluid>
-    </footer>
+    </FooterContainer>
   )
 }
 

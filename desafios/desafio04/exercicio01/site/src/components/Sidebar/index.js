@@ -1,5 +1,5 @@
-import { H2, H6 } from './headings'
-import { Button } from './button'
+import { H2, H6 } from '../Headings'
+import { Button } from '../Buttons'
 
 function Sidebar({ articles, handleContent, selectedArticle }) {
   return (

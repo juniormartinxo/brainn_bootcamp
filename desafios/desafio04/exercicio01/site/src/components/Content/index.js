@@ -1,4 +1,4 @@
-import { H2 } from './headings'
+import { H2 } from '../Headings'
 
 function Content({ article }) {
   return (
