@@ -1,7 +1,9 @@
+import Container from './components/Container'
 import Header from './components/Header'
-import Menu from './components/menu'
+import Menu from './components/Menu'
 import Main from './components/Main'
 import Footer from './components/Footer'
+import GlobalStyle from './styles/global-styles'
 
 const articles = [
   {
@@ -31,12 +33,13 @@ const articles = [
 
 function App() {
   return (
-    <div className='container'>
+    <Container>
+      <GlobalStyle />
       <Header />
       <Menu />
       <Main articles={articles} />
       <Footer />
-    </div>
+    </Container>
   )
 }
 

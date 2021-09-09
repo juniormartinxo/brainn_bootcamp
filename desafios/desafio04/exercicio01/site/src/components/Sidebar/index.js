@@ -1,38 +1,29 @@
 import { H2, H6 } from '../Headings'
-import { Button } from '../Buttons'
+import { AsideStyle, SidebarContainer } from './styles'
 
 function Sidebar({ articles, handleContent, selectedArticle }) {
   return (
-    <aside className='sidebar'>
+    <AsideStyle>
       <H2>Artigos</H2>
       {articles.map(article => {
-        const checked = selectedArticle === article ? ' checked' : ''
+        const checked = selectedArticle === article ? 'checked' : ''
         return (
-          <div
-            className={'content-sidebar' + checked}
+          <SidebarContainer
+            className={checked}
             key={article.id}
             onClick={() => {
               handleContent(article)
             }}
           >
             <H6>{article.title}</H6>
-            {/*
-            <p>
-              <ButtonArticle
-                article={article}
-                handleContent={handleContent}
-                kind='secondary small'
-              ></ButtonArticle>
-            </p>
-            */}
-          </div>
+          </SidebarContainer>
         )
       })}
 
-      <p className='container-button-all-articles'>
-        <Button kind='primary'>Ver todos artigos</Button>
+      <p>
+        <button>Ver todos artigos</button>
       </p>
-    </aside>
+    </AsideStyle>
   )
 }
 
