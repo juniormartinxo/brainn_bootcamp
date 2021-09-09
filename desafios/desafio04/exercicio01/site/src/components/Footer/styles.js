@@ -7,12 +7,14 @@ const FooterContainer = styled.footer`
   text-align: right;
 `
 
-const TextFooter = styled.p``
-
 const TitleFooter = styled.h3`
   font-size: 1.3rem;
   font-weight: 700;
   padding: 10px 0;
+`
+
+const TextFooter = styled.p`
+  font-size: 1rem;
 `
 
 const LinkFooter = styled.a`

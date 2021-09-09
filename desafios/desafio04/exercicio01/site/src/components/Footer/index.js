@@ -6,12 +6,12 @@ function Footer() {
     <FooterContainer>
       <ContainerFluid>
         <TitleFooter>Brainn Academy</TitleFooter>
-        <br />
         <TextFooter>
-          Todos os direitos reservados
+          Todos os direitos reservados{' '}
           <LinkFooter href='https://brainn.co' target='_blank' rel='noreferrer'>
+            {' '}
             Brainn
-          </LinkFooter>
+          </LinkFooter>{' '}
           ©{new Date().getFullYear()}
         </TextFooter>
       </ContainerFluid>
