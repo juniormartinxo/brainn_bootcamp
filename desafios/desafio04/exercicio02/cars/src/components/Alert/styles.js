@@ -16,10 +16,17 @@ const AlertContainer = styled.div`
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
   }
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+  }
 `
 
 const AlertText = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
+  padding: 15px 5px;
 `
 
 export { AlertText, AlertContainer }
