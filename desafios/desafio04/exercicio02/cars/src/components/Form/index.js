@@ -6,6 +6,8 @@ import {
   InputContainerColS6,
   InputContainerColS12,
   ButtonGravar,
+  InputCar,
+  InputCarColor,
 } from './styles'
 
 function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
@@ -100,7 +102,7 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
         <Row>
           <InputContainerColS12>
             <label htmlFor='iptCarUrlImage'>Url da imagem</label>
-            <input
+            <InputCar
               type='text'
               data-js='iptCarUrlImage'
               className='iptCarUrlImage deeppink-border'
@@ -112,7 +114,7 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
         <Row>
           <InputContainerColS6>
             <label htmlFor='iptCarBrand'>Marca</label>
-            <input
+            <InputCar
               type='text'
               data-js='iptCarBrand'
               className='iptCarBrand deeppink-border'
@@ -122,7 +124,7 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
           </InputContainerColS6>
           <InputContainerColS6>
             <label htmlFor='iptCarModel'>Modelo</label>
-            <input
+            <InputCar
               type='text'
               data-js='iptCarModel'
               className='iptCarModel deeppink-border'
@@ -135,7 +137,7 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
         <Row>
           <InputContainerColS4>
             <label htmlFor='iptCarYear'>Ano</label>
-            <input
+            <InputCar
               type='number'
               data-js='iptCarYear'
               className='iptCarYear deeppink-border'
@@ -145,7 +147,7 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
           </InputContainerColS4>
           <InputContainerColS4>
             <label htmlFor='iptCarPlate'>Placa</label>
-            <input
+            <InputCar
               type='text'
               data-js='iptCarPlate'
               className='iptCarPlate deeppink-border'
@@ -156,7 +158,7 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
           <InputContainerColS4>
             <label htmlFor='iptCarColor'>Color</label>
             <br />
-            <input
+            <InputCarColor
               type='color'
               data-js='iptCarColor'
               className='iptCarColor'

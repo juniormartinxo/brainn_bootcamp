@@ -80,6 +80,41 @@ const ButtonGravar = styled.button`
   }
 `
 
+const InputCar = styled.input`
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: border 0.3s, -webkit-box-shadow 0.3s;
+  transition: border 0.3s, -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s, border 0.3s;
+  transition: box-shadow 0.3s, border 0.3s, -webkit-box-shadow 0.3s;
+
+  &:focus {
+    border-bottom: 1px solid #f44336;
+    -webkit-box-shadow: 0 1px 0 0 #f44336;
+    box-shadow: 0 1px 0 0 #f44336;
+  }
+`
+
+const InputCarColor = styled.input`
+  width: 100%;
+  height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+`
+
 export {
   TitleForm,
   Row,
@@ -87,4 +122,6 @@ export {
   InputContainerColS6,
   InputContainerColS12,
   ButtonGravar,
+  InputCar,
+  InputCarColor,
 }
