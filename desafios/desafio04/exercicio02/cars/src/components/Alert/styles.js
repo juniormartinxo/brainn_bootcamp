@@ -1,4 +1,4 @@
-import styled from 'styled-component'
+import styled from 'styled-components'
 
 const AlertContainer = styled.div`
   width: 600px;

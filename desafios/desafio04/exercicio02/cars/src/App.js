@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import Table from './components/table'
-import Form from './components/form'
+import Table from './components/Table'
+import Form from './components/Form'
 import { urlCars } from './config/env'
 import Alert from './components/Alert'
+import Container from './components/Container'
 import GlobalStyle from './styles/global-styles'
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
   }, [setCars])
 
   return (
-    <div className='container'>
+    <Container>
+      <GlobalStyle />
       <Form
         setCars={setCars}
         cars={cars}
@@ -35,7 +37,7 @@ function App() {
       />
       <Table cars={cars} setCars={setCars}></Table>
       <Alert alertStatus={alertStatus}>{alertMessage}</Alert>
-    </div>
+    </Container>
   )
 }
 

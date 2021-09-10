@@ -130,7 +130,7 @@ a {
   text-decoration: none;
 }
 
-* {
+body {
   font-family: 'Rubik', sans-serif;
 }
 `

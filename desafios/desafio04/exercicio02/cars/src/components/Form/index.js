@@ -1,5 +1,12 @@
 import { urlCars } from '../../config/env'
-import { TitleForm } from './styles'
+import {
+  TitleForm,
+  Row,
+  InputContainerColS4,
+  InputContainerColS6,
+  InputContainerColS12,
+  ButtonGravar,
+} from './styles'
 
 function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
   function sendMessage(message, status, time) {
@@ -90,8 +97,8 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
     <>
       <TitleForm>Cadastro de carros</TitleForm>
       <form onSubmit={handleSubmit}>
-        <div className='row'>
-          <div className='input-container col s12'>
+        <Row>
+          <InputContainerColS12>
             <label htmlFor='iptCarUrlImage'>Url da imagem</label>
             <input
               type='text'
@@ -100,10 +107,10 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
               name='iptCarUrlImage'
               id='iptCarUrlImage'
             />
-          </div>
-        </div>
-        <div className='row'>
-          <div className='input-container col s6'>
+          </InputContainerColS12>
+        </Row>
+        <Row>
+          <InputContainerColS6>
             <label htmlFor='iptCarBrand'>Marca</label>
             <input
               type='text'
@@ -112,8 +119,8 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
               name='iptCarBrand'
               id='iptCarBrand'
             />
-          </div>
-          <div className='input-container col s6'>
+          </InputContainerColS6>
+          <InputContainerColS6>
             <label htmlFor='iptCarModel'>Modelo</label>
             <input
               type='text'
@@ -122,11 +129,11 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
               name='iptCarModel'
               id='iptCarModel'
             />
-          </div>
-        </div>
+          </InputContainerColS6>
+        </Row>
 
-        <div className='row'>
-          <div className='input-container col s4'>
+        <Row>
+          <InputContainerColS4>
             <label htmlFor='iptCarYear'>Ano</label>
             <input
               type='number'
@@ -135,8 +142,8 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
               name='iptCarYear'
               id='iptCarYear'
             />
-          </div>
-          <div className='input-container col s4'>
+          </InputContainerColS4>
+          <InputContainerColS4>
             <label htmlFor='iptCarPlate'>Placa</label>
             <input
               type='text'
@@ -145,8 +152,8 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
               name='iptCarPlate'
               id='iptCarPlate'
             />
-          </div>
-          <div className='input-container col s4'>
+          </InputContainerColS4>
+          <InputContainerColS4>
             <label htmlFor='iptCarColor'>Color</label>
             <br />
             <input
@@ -156,20 +163,19 @@ function Form({ cars, setCars, setAlertStatus, setAlertMessage }) {
               name='iptCarColor'
               id='iptCarColor'
             />
-          </div>
-        </div>
+          </InputContainerColS4>
+        </Row>
 
-        <div className='input-container'>
-          <button
+        <InputContainerColS12>
+          <ButtonGravar
             type='submit'
             className='btn deeppink col'
-            data-js='btnInsertCar'
             name='btnInsertCar'
             id='btnInsertCar'
           >
             Enviar
-          </button>
-        </div>
+          </ButtonGravar>
+        </InputContainerColS12>
       </form>
     </>
   )

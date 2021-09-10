@@ -1,4 +1,4 @@
-import styled from 'styled-component'
+import styled from 'styled-components'
 
 const ContainerStyle = styled.div`
   margin: 0 auto;
